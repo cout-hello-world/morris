@@ -8,7 +8,8 @@
 enum class symbol : std::uint8_t {
 	A = 0, B, C, D, E, F, G, H, I, J, K, L, M,
 	N, O, P, Q, R, S, T, U, V, W, X, Y, Z,
-	ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, ZERO, SPACE
+	ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, ZERO, SPACE,
+	PERIOD, COMMA, QUESTION_MARK, APOSTROPHE, SLASH
 };
 
 class symbol_queue {

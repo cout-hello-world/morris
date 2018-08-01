@@ -48,6 +48,16 @@ int main()
 				ival = static_cast<int>(symbol::ZERO);
 			} else if (ch == ' ') {
 				ival = static_cast<int>(symbol::SPACE);
+			} else if (ch == '.') {
+				ival = static_cast<int>(symbol::PERIOD);
+			} else if (ch == ',') {
+				ival = static_cast<int>(symbol::COMMA);
+			} else if (ch == '?') {
+				ival = static_cast<int>(symbol::QUESTION_MARK);
+			} else if (ch == '\'') {
+				ival = static_cast<int>(symbol::APOSTROPHE);
+			} else if (ch == '/') {
+				ival = static_cast<int>(symbol::SLASH);
 			} else {
 				ival = -1; // Like it never happened
 			}

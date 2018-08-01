@@ -143,7 +143,7 @@ void run_output_thread(symbol_queue &q,
 				ws("..---");
 				break;
 			case symbol::THREE:
-				ws("...---");
+				ws("...--");
 				break;
 			case symbol::FOUR:
 				ws("....-");
@@ -168,6 +168,21 @@ void run_output_thread(symbol_queue &q,
 				break;
 			case symbol::SPACE:
 				silence(4);
+				break;
+			case symbol::PERIOD:
+				ws(".-.-.-");
+				break;
+			case symbol::COMMA:
+				ws("--..--");
+				break;
+			case symbol::QUESTION_MARK:
+				ws("..--..");
+				break;
+			case symbol::APOSTROPHE:
+				ws(".----.");
+				break;
+			case symbol::SLASH:
+				ws("-..-.");
 				break;
 			default:
 				throw std::runtime_error("Unexpected symbol");
