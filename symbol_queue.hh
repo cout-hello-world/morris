@@ -3,6 +3,7 @@
 #include <mutex>
 #include <queue>
 #include <cstdint>
+#include <cstdlib>
 
 enum class symbol : std::uint8_t {
 	A = 0, B, C, D, E, F, G, H, I, J, K, L, M,
@@ -12,10 +13,14 @@ enum class symbol : std::uint8_t {
 
 class symbol_queue {
 public:
-	void push(symbol s)
+	int try_push(symbol s)
 	{
 		std::lock_guard<std::mutex> lg(queue_mutex);
+		if (queue.size() >= MaxSize) {
+			return 1;
+		}
 		queue.push(s);
+		return 0;
 	}
 	int try_pop(symbol &s)
 	{
@@ -28,6 +33,7 @@ public:
 		return 0;
 	}
 private:
+	static constexpr std::size_t MaxSize = 8 * 1024;
 	std::queue<symbol> queue;
 	std::mutex queue_mutex;
 };

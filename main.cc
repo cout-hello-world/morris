@@ -4,12 +4,27 @@
 #include <functional>
 #include <atomic>
 #include <cstdint>
+#include <chrono>
 
 #include "wave.h"
 #include "symbol_queue.hh"
 #include "output.hh"
 
 // Enhancement try_push to avoid huge memory usage
+namespace {
+void push(symbol_queue &q, symbol value)
+{
+	constexpr std::chrono::milliseconds SleepTime(10);
+	while (1) {
+		auto res = q.try_push(value);
+		if (res == 1) {
+			std::this_thread::sleep_for(SleepTime);
+		} else {
+			break;
+		}
+	}
+}
+}
 
 int main()
 {
@@ -37,11 +52,11 @@ int main()
 				ival = -1; // Like it never happened
 			}
 			if (ival >= 0) {
-				q.push(static_cast<symbol>(ival));
+				push(q, static_cast<symbol>(ival));
 				++symbols_queued_temp;
 			}
 			if (i + 1 == line.size()) {
-				q.push(symbol::SPACE);
+				push(q, symbol::SPACE);
 				++symbols_queued_temp;
 			}
 		}
