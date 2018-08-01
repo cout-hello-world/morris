@@ -89,7 +89,7 @@ void run_output_thread(symbol_queue &q,
 				ws(".---");
 				break;
 			case symbol::K:
-				ws("-.-.");
+				ws("-.-");
 				break;
 			case symbol::L:
 				ws(".-..");
