@@ -6,8 +6,8 @@
 #include <stdbool.h>
 
 const double Pi = acos(-1.0);
-#define Samples ((int)4000)
-#define FadeSamples ((int)200)
+#define Samples ((int)2000)
+#define FadeSamples ((int)(Samples / 20))
 #define SamplesPerCycle ((int)80)
 
 static void sound_dit(bool fade_in, bool fade_out)
