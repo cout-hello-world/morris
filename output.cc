@@ -184,6 +184,30 @@ void run_output_thread(symbol_queue &q,
 			case symbol::SLASH:
 				ws("-..-.");
 				break;
+			case symbol::DASH:
+				ws("-....-");
+				break;
+			case symbol::OPEN_PAREN:
+				ws("-.--.");
+				break;
+			case symbol::CLOSE_PAREN:
+				ws("-.--.-");
+				break;
+			case symbol::DOUBLE_QUOTE:
+				ws(".-..-.");
+				break;
+			case symbol::EQUALS:
+				ws("-...-");
+				break;
+			case symbol::PLUS:
+				ws(".-.-.");
+				break;
+			case symbol::AT:
+				ws(".--.-.");
+				break;
+			case symbol::COLON:
+				ws("---...");
+				break;
 			default:
 				throw std::runtime_error("Unexpected symbol");
 			}

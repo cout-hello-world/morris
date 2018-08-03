@@ -54,10 +54,26 @@ int main()
 				ival = static_cast<int>(symbol::COMMA);
 			} else if (ch == '?') {
 				ival = static_cast<int>(symbol::QUESTION_MARK);
+			} else if (ch == ':') {
+				ival = static_cast<int>(symbol::COLON);
 			} else if (ch == '\'') {
 				ival = static_cast<int>(symbol::APOSTROPHE);
+			} else if (ch == '-') {
+				ival = static_cast<int>(symbol::DASH);
 			} else if (ch == '/') {
 				ival = static_cast<int>(symbol::SLASH);
+			} else if (ch == '(') {
+				ival = static_cast<int>(symbol::OPEN_PAREN);
+			} else if (ch == ')') {
+				ival = static_cast<int>(symbol::CLOSE_PAREN);
+			} else if (ch == '"') {
+				ival = static_cast<int>(symbol::DOUBLE_QUOTE);
+			} else if (ch == '=') {
+				ival = static_cast<int>(symbol::EQUALS);
+			} else if (ch == '+') {
+				ival = static_cast<int>(symbol::PLUS);
+			} else if (ch == '@') {
+				ival = static_cast<int>(symbol::AT);
 			} else {
 				ival = -1; // Like it never happened
 			}
