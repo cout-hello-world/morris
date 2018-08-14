@@ -4,5 +4,6 @@
 !/*.cc
 !/*.hh
 !/Makefile
+!/Readme.md
 .*
 !/.gitignore
